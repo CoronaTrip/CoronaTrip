@@ -157,12 +157,9 @@ public class Controller extends HttpServlet {
 	    texto.append("<br/>");
 	    texto.append("Mensagem: ");
 	    texto.append(request.getParameter("mensagem"));
-
 	    enviar.setMsg(texto.toString());
-
 	    boolean enviou = enviar.enviarGmail();
 	    request.getRequestDispatcher("contato.jsp").forward(request, response);
-
 	    break;
 	}
     }

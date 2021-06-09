@@ -3,12 +3,12 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="menu.html"></jsp:include>
 <div class="container">
+	<div class="alert alert-${tipo}" role="alert">${mensagem}</div>
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-8 col-lg-6 pb-5">
 			<!--Form with header-->
 			<form action="Controller" method="post">
-			
-			<input type="hidden" name="acao" value="email">
+				<input type="hidden" name="acao" value="email">
 				<div class="card border-primary rounded-0">
 					<div class="card-header p-0">
 						<div class="bg-dark text-white text-center py-2">
@@ -27,8 +27,8 @@
 										<i class="fa fa-user text-info"></i>
 									</div>
 								</div>
-								<input type="text" class="form-control" id="nombre"
-									name="nome" placeholder="Nome" required>
+								<input type="text" class="form-control" id="nombre" name="nome"
+									placeholder="Nome" required>
 							</div>
 						</div>
 						<div class="form-group">
@@ -50,8 +50,8 @@
 										<i class="fa fa-comment text-info"></i>
 									</div>
 								</div>
-								<textarea name="mensagem" class="form-control" placeholder="Escreva Sua Mensagem"
-									required></textarea>
+								<textarea name="mensagem" class="form-control"
+									placeholder="Escreva Sua Mensagem" required></textarea>
 							</div>
 						</div>
 
