@@ -56,6 +56,15 @@ public class Controller extends HttpServlet {
 		    || request.getParameter("custo") == null) {
 		mensagem = "Atençao existem campos em branco!";
 		tipo = "danger";
+		/*
+		 * System.out.println( request.getParameter("nome") +
+		 * request.getParameter("cep") + request.getParameter("estado") +
+		 * request.getParameter("cidade") + request.getParameter("endereco") +
+		 * request.getParameter("bairro") + request.getParameter("lote") +
+		 * request.getParameter("telefone") + request.getParameter("email") +
+		 * request.getParameter("descricao") + request.getParameter("incluso") +
+		 * request.getParameter("valor") + request.getParameter("custo"));
+		 */
 	    } else {
 		String nome = request.getParameter("nome");
 		int cep = Integer.parseInt(request.getParameter("cep"));
@@ -68,32 +77,43 @@ public class Controller extends HttpServlet {
 		String email = request.getParameter("email");
 		String descricao = request.getParameter("descricao");
 		String incluso = request.getParameter("incluso");
-		double valor = Double.parseDouble(request.getParameter("valor"));
-		double custo = Double.parseDouble(request.getParameter("custo"));
-
-		ViagemBO viagemBO = new ViagemBO();
 
 		try {
-		    int i = 0;
-		    for (Part part : request.getParts()) {
-			if (part.getName().equals("file")) {
-			    Date dataHoraAtual = new Date();
-			    String data = new SimpleDateFormat("dd-MM-yyyy").format(dataHoraAtual);
-			    String hora = new SimpleDateFormat("HH:mm:ss").format(dataHoraAtual);
-			    part.write(path + File.separator + data + hora + part.getSubmittedFileName());
-			    fotos[i] = data + hora + part.getSubmittedFileName();
-			    i++;
+		    double valor = Double.parseDouble(request.getParameter("valor"));
+		    double custo = Double.parseDouble(request.getParameter("custo"));
+		    if (valor >= 0.0 && custo >= 0.0) {
+			ViagemBO viagemBO = new ViagemBO();
+
+			try {
+			    int i = 0;
+			    for (Part part : request.getParts()) {
+				if (part.getName().equals("file")) {
+				    Date dataHoraAtual = new Date();
+				    String data = new SimpleDateFormat("dd-MM-yyyy").format(dataHoraAtual);
+				    String hora = new SimpleDateFormat("HH:mm:ss").format(dataHoraAtual);
+				    part.write(path + File.separator + data + hora + part.getSubmittedFileName());
+				    fotos[i] = data + hora + part.getSubmittedFileName();
+				    i++;
+				}
+			    }
+			} catch (Exception e) {
+			    msg = "Error ao salvar o arquivo";
 			}
+			if (viagemBO.addViagem(new ViagemDTO(nome, cep, estado, cidade, endereco, bairro, lote,
+				telefone, email, descricao, incluso, valor, custo, fotos[0], fotos[1], fotos[2],
+				fotos[3])) == true) {
+			    mensagem = "Cadastrado com sucesso!";
+			    tipo = "success";
+			} else {
+			    mensagem = "Não cadastrado!";
+			    tipo = "danger";
+			}
+		    } else {
+			mensagem = "Atençao o valor de diaria ou custo estão negativos!";
+			tipo = "danger";
 		    }
-		} catch (Exception e) {
-		    msg = "Error ao salvar o arquivo";
-		}
-		if (viagemBO.addViagem(new ViagemDTO(nome, cep, estado, cidade, endereco, bairro, lote, telefone, email,
-			descricao, incluso, valor, custo, fotos[0], fotos[1], fotos[2], fotos[3])) == true) {
-		    mensagem = "Cadastrado com sucesso!";
-		    tipo = "success";
-		} else {
-		    mensagem = "Não cadastrado!";
+		} catch (NumberFormatException e) {
+		    mensagem = "Por favor digite apenas numeros!";
 		    tipo = "danger";
 		}
 	    }
@@ -121,7 +141,6 @@ public class Controller extends HttpServlet {
 	    break;
 
 	case "email":
-
 	    EnviarEmail enviar = new EnviarEmail();
 	    enviar.setEmailDestinatario("vicenteferreira369@gmail.com");
 	    enviar.setAssunto("Fale Conosco");
