@@ -39,42 +39,67 @@ public class Controller extends HttpServlet {
 
 	String acao = request.getParameter("acao");
 	String msg = "";
+	String mensagem = "";
+	String tipo = "";
 	String path = request.getServletContext().getRealPath("/img/upload");
 	String[] fotos = { "", "", "", "" };
 
 	switch (acao) {
 	case "create":
-	    String nome = request.getParameter("nome");
-	    int cep = Integer.parseInt(request.getParameter("cep"));
-	    String estado = request.getParameter("estado");
-	    String cidade = request.getParameter("cidade");
-	    String endereco = request.getParameter("endereco");
-	    String bairro = request.getParameter("bairro");
-	    int lote = Integer.parseInt(request.getParameter("lote"));
-	    Integer telefone = Integer.parseInt(request.getParameter("telefone"));
-	    String email = request.getParameter("email");
-	    String descricao = request.getParameter("descricao");
-	    String incluso = request.getParameter("incluso");
-	    double valor = Double.parseDouble(request.getParameter("valor"));
-	    double custo = Double.parseDouble(request.getParameter("custo"));
-	    ViagemBO viagemBO = new ViagemBO();
 
-	    try {
-		int i = 0;
-		for (Part part : request.getParts()) {
-		    if (part.getName().equals("file")) {
-			Date dataHoraAtual = new Date();
-			String data = new SimpleDateFormat("dd-MM-yyyy").format(dataHoraAtual);
-			String hora = new SimpleDateFormat("HH:mm:ss").format(dataHoraAtual);
-			part.write(path + File.separator + data + hora + part.getSubmittedFileName());
-			fotos[i] = data + hora + part.getSubmittedFileName();
-			i++;
+	    if (request.getParameter("nome") == null || request.getParameter("cep") == null
+		    || request.getParameter("estado") == null || request.getParameter("cidade") == null
+		    || request.getParameter("endereco") == null || request.getParameter("bairro") == null
+		    || request.getParameter("lote") == null || request.getParameter("telefone") == null
+		    || request.getParameter("email") == null || request.getParameter("descricao") == null
+		    || request.getParameter("incluso") == null || request.getParameter("valor") == null
+		    || request.getParameter("custo") == null) {
+		mensagem = "Atençao existem campos em branco!";
+		tipo = "danger";
+	    } else {
+		String nome = request.getParameter("nome");
+		int cep = Integer.parseInt(request.getParameter("cep"));
+		String estado = request.getParameter("estado");
+		String cidade = request.getParameter("cidade");
+		String endereco = request.getParameter("endereco");
+		String bairro = request.getParameter("bairro");
+		int lote = Integer.parseInt(request.getParameter("lote"));
+		long telefone = Long.parseLong(request.getParameter("telefone"));
+		String email = request.getParameter("email");
+		String descricao = request.getParameter("descricao");
+		String incluso = request.getParameter("incluso");
+		double valor = Double.parseDouble(request.getParameter("valor"));
+		double custo = Double.parseDouble(request.getParameter("custo"));
+
+		ViagemBO viagemBO = new ViagemBO();
+
+		try {
+		    int i = 0;
+		    for (Part part : request.getParts()) {
+			if (part.getName().equals("file")) {
+			    Date dataHoraAtual = new Date();
+			    String data = new SimpleDateFormat("dd-MM-yyyy").format(dataHoraAtual);
+			    String hora = new SimpleDateFormat("HH:mm:ss").format(dataHoraAtual);
+			    part.write(path + File.separator + data + hora + part.getSubmittedFileName());
+			    fotos[i] = data + hora + part.getSubmittedFileName();
+			    i++;
+			}
 		    }
+		} catch (Exception e) {
+		    msg = "Error ao salvar o arquivo";
 		}
-	    } catch (Exception e) {
-		msg = "Error ao salvar o arquivo";
+		if (viagemBO.addViagem(new ViagemDTO(nome, cep, estado, cidade, endereco, bairro, lote, telefone, email,
+			descricao, incluso, valor, custo, fotos[0], fotos[1], fotos[2], fotos[3])) == true) {
+		    mensagem = "Cadastrado com sucesso!";
+		    tipo = "success";
+		} else {
+		    mensagem = "Não cadastrado!";
+		    tipo = "danger";
+		}
 	    }
-	    viagemBO.addViagem(new ViagemDTO(nome, cep, estado, cidade, endereco, bairro, lote, telefone, email, descricao, incluso, valor, custo, fotos[0], fotos[1], fotos[2], fotos[3]));
+
+	    request.setAttribute("mensagem", mensagem);
+	    request.setAttribute("tipo", tipo);
 	    request.getRequestDispatcher("cadastro.jsp").forward(request, response);
 	    break;
 	case "filter":
@@ -94,33 +119,32 @@ public class Controller extends HttpServlet {
 	    request.setAttribute("listaViagens", listaViagens);
 	    request.getRequestDispatcher("viagens.jsp").forward(request, response);
 	    break;
-	
-	
-	case "email":
-		
-		 EnviarEmail enviar = new EnviarEmail();
-		    enviar.setEmailDestinatario("vicenteferreira369@gmail.com");
-		    enviar.setAssunto("Fale Conosco");
-		    //uso StringBuffer para otimizar a concatenação 
-		    //de string
-		    StringBuffer texto = new StringBuffer(); 
-		    texto.append("<h2 align='center'>Fale Conosco</h2>");
-		    texto.append("Informações Enviadas:<br/>");
-		    texto.append("Nome:");
-		    texto.append(request.getParameter("nome"));
-		    texto.append("<br/>");
-		    texto.append("Email Contato: ");
-		    texto.append(request.getParameter("email"));
-		    texto.append("<br/>");
-		    texto.append("Mensagem: ");
-		    texto.append(request.getParameter("mensagem"));
-		    
-		    enviar.setMsg(texto.toString());
-		    
-		    boolean enviou = enviar.enviarGmail();
-		    request.getRequestDispatcher("contato.jsp").forward(request, response);
 
-		break;
+	case "email":
+
+	    EnviarEmail enviar = new EnviarEmail();
+	    enviar.setEmailDestinatario("vicenteferreira369@gmail.com");
+	    enviar.setAssunto("Fale Conosco");
+	    // uso StringBuffer para otimizar a concatenação
+	    // de string
+	    StringBuffer texto = new StringBuffer();
+	    texto.append("<h2 align='center'>Fale Conosco</h2>");
+	    texto.append("Informações Enviadas:<br/>");
+	    texto.append("Nome:");
+	    texto.append(request.getParameter("nome"));
+	    texto.append("<br/>");
+	    texto.append("Email Contato: ");
+	    texto.append(request.getParameter("email"));
+	    texto.append("<br/>");
+	    texto.append("Mensagem: ");
+	    texto.append(request.getParameter("mensagem"));
+
+	    enviar.setMsg(texto.toString());
+
+	    boolean enviou = enviar.enviarGmail();
+	    request.getRequestDispatcher("contato.jsp").forward(request, response);
+
+	    break;
 	}
     }
 

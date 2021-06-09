@@ -9,7 +9,6 @@ public class ViagemBO {
 	ViagemDAO viagemDAO = new ViagemDAO();
 
 	public boolean addViagem(ViagemDTO viagemdto) {
-
 		return viagemDAO.addViagem(viagemdto);
 	}
 	

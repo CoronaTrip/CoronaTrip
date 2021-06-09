@@ -33,7 +33,7 @@ public class ViagemDAO {
 	    ps.setString(5, viagemdto.getEndereco());
 	    ps.setString(6, viagemdto.getBairro());
 	    ps.setInt(7, viagemdto.getLote());
-	    ps.setInt(8, viagemdto.getTelefone());
+	    ps.setLong(8, viagemdto.getTelefone());
 	    ps.setString(9, viagemdto.getEmail());
 	    ps.setString(10, viagemdto.getDescricao());
 	    ps.setString(11, viagemdto.getIncluso());

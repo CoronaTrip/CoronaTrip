@@ -9,7 +9,7 @@ public class ViagemDTO {
     private String endereco;
     private String bairro;
     private int lote;
-    private int telefone;
+    private long telefone;
     private String email;
     private String descricao;
     private String incluso;
@@ -21,7 +21,7 @@ public class ViagemDTO {
     private String ft04;
     
     public ViagemDTO(String nome, int cep, String estado, String cidade, String endereco, String bairro, int lote,
-	    int telefone, String email, String descricao, String incluso, double valor, double custo, String ft01,
+	    long telefone, String email, String descricao, String incluso, double valor, double custo, String ft01,
 	    String ft02, String ft03, String ft04) {
 	super();
 	this.nome = nome;
@@ -43,7 +43,7 @@ public class ViagemDTO {
 	this.ft04 = ft04;
     }
     public ViagemDTO(int id, String nome, int cep, String estado, String cidade, String endereco, String bairro,
-	    int lote, int telefone, String email, String descricao, String incluso, double valor, double custo,
+	    int lote, long telefone, String email, String descricao, String incluso, double valor, double custo,
 	    String ft01, String ft02, String ft03, String ft04) {
 	super();
 	this.id = id;
@@ -89,7 +89,7 @@ public class ViagemDTO {
     public int getLote() {
         return lote;
     }
-    public int getTelefone() {
+    public long getTelefone() {
         return telefone;
     }
     public String getEmail() {
