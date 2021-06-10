@@ -60,7 +60,7 @@ public class ViagemDAO {
 	    while (rs.next()) {
 		ViagemDTO viagemDTO = new ViagemDTO(rs.getInt("idviagens"), rs.getString("nome_empresa"),
 			rs.getInt("cep"), rs.getString("estado"), rs.getString("cidade"), rs.getString("endereco"),
-			rs.getString("bairro"), rs.getInt("lote"), rs.getInt("telefone"), rs.getString("email"),
+			rs.getString("bairro"), rs.getInt("lote"), rs.getLong("telefone"), rs.getString("email"),
 			rs.getString("descricao"), rs.getString("refeicao_incluso"), rs.getDouble("diaria"),
 			rs.getDouble("alimentacao"), rs.getString("ft01"), rs.getString("ft02"), rs.getString("ft03"),
 			rs.getString("ft04"));
@@ -81,7 +81,7 @@ public class ViagemDAO {
 	    while (rs.next()) {
 		listaViagens.add(new ViagemDTO(rs.getInt("idviagens"), rs.getString("nome_empresa"), rs.getInt("cep"),
 			rs.getString("estado"), rs.getString("cidade"), rs.getString("endereco"),
-			rs.getString("bairro"), rs.getInt("lote"), rs.getInt("telefone"), rs.getString("email"),
+			rs.getString("bairro"), rs.getInt("lote"), rs.getLong("telefone"), rs.getString("email"),
 			rs.getString("descricao"), rs.getString("refeicao_incluso"), rs.getDouble("diaria"),
 			rs.getDouble("alimentacao"), rs.getString("ft01"), rs.getString("ft02"), rs.getString("ft03"),
 			rs.getString("ft04")));

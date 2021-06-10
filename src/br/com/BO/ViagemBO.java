@@ -17,7 +17,6 @@ public class ViagemBO {
 	}
 	
 	public List<ViagemDTO> getListViagens() {
-		
 		return viagemDAO.getListViagens();
 	}
 }

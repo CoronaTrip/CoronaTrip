@@ -65,22 +65,22 @@
 		<div class="col-lg-3 col-md-4 col-6">
 			<img class="img-fluid img-thumbnail"
 				src="img/upload/${viagemDTO.getFt01()}"
-				style="width: 240px; height: 250px;" alt="">
+				style="width: 300px; height: 250px;" alt="">
 		</div>
 		<div class="col-lg-3 col-md-4 col-6">
 			<img class="img-fluid img-thumbnail"
 				src="img/upload/${viagemDTO.getFt02()}"
-				style="width: 240px; height: 250px;" alt="">
+				style="width: 300px; height: 250px;" alt="">
 		</div>
 		<div class="col-lg-3 col-md-4 col-6">
 			<img class="img-fluid img-thumbnail"
 				src="img/upload/${viagemDTO.getFt03()}"
-				style="width: 240px; height: 250px;" alt="">
+				style="width: 300px; height: 250px;" alt="">
 		</div>
 		<div class="col-lg-3 col-md-4 col-6">
 			<img class="img-fluid img-thumbnail"
 				src="img/upload/${viagemDTO.getFt04()}"
-				style="width: 240px; height: 250px;" alt="">
+				style="width: 300px; height: 250px;" alt="">
 		</div>
 	</div>
 </div>

@@ -7,7 +7,7 @@
 	<div class="alert alert-${tipo}" role="alert">
   		${mensagem}
 	</div>
-	
+	<h1>Formulário de Cadastro</h1>
 	<form class="" action="Controller" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="acao" value="create">
 		

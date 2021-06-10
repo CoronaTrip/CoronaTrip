@@ -3,6 +3,7 @@
 /.settings/
 /.classpath
 /.project
+/upload/
 
 # Compiled class file
 *.class
