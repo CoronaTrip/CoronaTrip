@@ -9,7 +9,7 @@ CREATE TABLE `viagens` (
   `endereco` varchar(100) DEFAULT NULL,
   `bairro` varchar(100) DEFAULT NULL,
   `lote` int DEFAULT NULL,
-  `telefone` int DEFAULT NULL,
+  `telefone` bigint NOT NULL,
   `email` varchar(45) DEFAULT NULL,
   `descricao` varchar(1000) DEFAULT NULL,
   `refeicao_incluso` varchar(10) DEFAULT NULL,
