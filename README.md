@@ -1,8 +1,8 @@
-# Corona Tripo
+# Corona Trip
 
 ## Sumário
 
-- [Corona Tripo](#corona-tripo)
+- [Corona Trip](#corona-trip)
   - [Sumário](#sumário)
   - [Versão do projeto](#versão-do-projeto)
   - [Sobre o projeto](#sobre-o-projeto)
