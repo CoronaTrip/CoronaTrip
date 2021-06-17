@@ -29,6 +29,26 @@ Versão 1.0
 
 Este é um projeto para a matéria de programação web com java.
 
+Que tem como tema, melhorar a experiência de quem pretende organizar uma viagem após a pandemia.
+
+PRÉ REQUISITOS PARA O DESENVOLVIMENTOA solução deve contemplar as seguintes tecnologias:
+
+<ul>
+  <li> Servlets </li>
+  <li> JSTL </li>
+  <li> Bootstrap </li>
+  <li> HTML </li>
+  <li> CSS </li>
+  <li> JavaScript </li>
+  <li> Banco de dados </li>
+  <li> Requisição HTTP </li>
+  <li> Arquitetura MVC </li>
+</ul>
+
+REGRAS APLICADAS AO DESENVOLVIMENTO - Todos os campos que possuem entrada de dados devem ser validados para não permitir submeter valores nulos para o servidor.-Utilizar apenas um servlet por CRUD-O   sistema   deve   aplicar   o   padrão   MVC,   cada   camada   com   sua responsabilidade especifica -Todos os métodos devem estar devidamente comentado-Criar uma pasta para armazenar os CSS e os arquivos de scripts.
+
+Nosso projeto tem como objetivo, cadastrar determinadas pousadas, e forneçer as informações delas para o usuário, bem como mostrar alguns dados da covid nesso local.
+
 ## Casos de Uso do projeto
 
 ![imagem](url da imagem)
@@ -39,7 +59,13 @@ Ex: O que é preciso instalar para rodar o projeto.
 
 ## Ferramentas utilizadas no projeto
 
-Ex: Gimp, Inkscape e Code.
+<ul>
+  <li> Eclipse </li>
+  <li> Git </li>
+  <li> GitHub </li>
+  <li> Figma </li>
+  <li> WorkBench Mysql</li>
+</ul>
 
 ## Como executar o projeto
 
