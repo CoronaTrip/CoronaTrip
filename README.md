@@ -74,33 +74,23 @@ Ex: Esse sistema foi desenvolvido em linux. Algumas bibliotécas podem não func
   <tr>
     <td align="center">
       <a href="https://www.linkedin.com/in/gabriel-alves-de-paulo">
-        <img src="WebContent/img/gabriel.jpeg" width="100px;" alt=""/><br>
+        <img src="WebContent/img/gabriel.jpeg" width="100px;" alt="Foto do Gabriel"/><br>
         <sub>
           <b>Gabriel Alves</b>
         </sub>
       </a>
     </td>
-  </tr>  
-</table>
-
-<table>
-  <tr>
     <td align="center">
       <a href="https://www.linkedin.com/in/mateus-pereira-de-souza-moreira/">
-        <img src="WebContent/img/mateus.jpeg" width="100px;" alt=""/><br>
+        <img src="WebContent/img/mateus.jpeg" width="100px;" alt="Foto do Mateus"/><br>
         <sub>
-          <b>Gabriel Alves</b>
+          <b>Mateus Pereira</b>
         </sub>
       </a>
     </td>
-  </tr>  
-</table>
-
-<table>
-  <tr>
     <td align="center">
       <a href="https://www.linkedin.com/in/raniery-azevedo-628945162/">
-        <img src="WebContent/img/raniery.jpeg" width="100px;" alt=""/><br>
+        <img src="WebContent/img/raniery.jpeg" width="100px;" alt="Foto do Raniery"/><br>
         <sub>
           <b>Raniery Pereira</b>
         </sub>
