@@ -73,26 +73,50 @@ Ex: Esse sistema foi desenvolvido em linux. Algumas bibliotécas podem não func
 <table>
   <tr>
     <td align="center">
-      <a href="https://www.linkedin.com/in/gabriel-alves-de-paulo">
-        <img src="WebContent/img/gabriel.jpeg" width="100px;" alt="Foto do Gabriel"/><br>
+    <img src="WebContent/img/gabriel.jpeg" width="100px;" alt="Foto do Gabriel"/><br>
+      <sub>
+        <b>Gabriel Alves</b>
+      </sub><br>
+      <a href="https://github.com/GabrielAlves-bot">
         <sub>
-          <b>Gabriel Alves</b>
+          <b>GitHub</b>
+        </sub>
+      </a><br>
+      <a href="https://www.linkedin.com/in/gabriel-alves-de-paulo/">
+        <sub>
+          <b>LinkedIn</b>
         </sub>
       </a>
     </td>
     <td align="center">
+    <img src="WebContent/img/mateus.jpeg" width="100px;" alt="Foto do Mateus"/><br>
+      <sub>
+        <b>Mateus Pereira</b>
+      </sub><br>
+      <a href="https://github.com/mateuspsm">
+        <sub>
+          <b>GitHub</b>
+        </sub>
+      </a><br>
       <a href="https://www.linkedin.com/in/mateus-pereira-de-souza-moreira/">
-        <img src="WebContent/img/mateus.jpeg" width="100px;" alt="Foto do Mateus"/><br>
         <sub>
-          <b>Mateus Pereira</b>
+          <b>LinkedIn</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://www.linkedin.com/in/raniery-azevedo-628945162/">
-        <img src="WebContent/img/raniery.jpeg" width="100px;" alt="Foto do Raniery"/><br>
+    <img src="WebContent/img/raniery.jpeg" width="100px;" alt="Foto do Raniery"/><br>
+      <sub>
+        <b>Raniery Pereira</b>
+      </sub><br>
+        <a href="https://github.com/ranieryAzevedo">
         <sub>
-          <b>Raniery Pereira</b>
+          <b>GitHub</b>
+        </sub>
+      </a><br>
+      <a href="https://www.linkedin.com/in/raniery-azevedo-628945162/">
+        <sub>
+          <b>LinkedIn</b>
         </sub>
       </a>
     </td>
