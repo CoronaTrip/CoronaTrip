@@ -12,10 +12,7 @@
   - [Como executar o projeto](#como-executar-o-projeto)
     - [Uma vez atendidos os pré-requisito, basta executar seguintes códigos:](#uma-vez-atendidos-os-pré-requisito-basta-executar-seguintes-códigos)
       - [Comando 1](#comando-1)
-      - [Comando 2](#comando-2)
   - [Observações](#observações)
-      - [Mude isso:](#mude-isso)
-      - [Para isso:](#para-isso)
   - [Autores](#autores)
   - [Conclusão](#conclusão)
   - [Licença](#licença)
@@ -55,7 +52,10 @@ Nosso projeto tem como objetivo, cadastrar determinadas pousadas, e forneçer as
 
 ## Pré-requisitos do projeto
 
-Ex: O que é preciso instalar para rodar o projeto.
+Ter um servidor java WEB.
+Ex: Apache Tomcat ou GlassFish.
+
+E o jdk instalado.
 
 ## Ferramentas utilizadas no projeto
 
@@ -69,30 +69,19 @@ Ex: O que é preciso instalar para rodar o projeto.
 
 ## Como executar o projeto
 
+Como utilizei o eclipse no desenvolvimento, rodo o projeto por ele mesmo.
+
 ### Uma vez atendidos os pré-requisito, basta executar seguintes códigos:
 
 #### Comando 1
 ```
-make run
+Apenas clico Run primeiro botão de play.
 ```
-
-#### Comando 2
-```
-make clean
-```
+<img src="WebContent/img/run.png" width="96px;" alt="Run project"/>
 
 ## Observações
 
-Ex: Esse sistema foi desenvolvido em linux. Algumas bibliotécas podem não funcionar muito bem dependendo do seu S.O.
-
-#### Mude isso:
-```
- __fpurge(stdin)
-```
-#### Para isso:
-```
- fflush(stdin)
-```
+Ex: A classe Email só está funcionando quando o projeto é executado no windows.
 
 ## Autores
 
@@ -160,5 +149,5 @@ Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais
 
 ## Referencias
 
-- Referencias que queira destacar ao desenvolver o projeto
-
+- Material de apoio disponibilizado pelo professor de programação web java
+- Coding Master - Programming Tutorials [YouTube](https://www.youtube.com/watch?v=qzRKa8I36Ww)
