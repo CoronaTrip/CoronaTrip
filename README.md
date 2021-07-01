@@ -141,7 +141,11 @@ Ex: A classe Email só está funcionando quando o projeto é executado no window
 
 ## Conclusão
 
-Agradecimentos
+Foi um grande desafio fazer esse projeto, pois conhecemos algumas tecnologias novas. Com certeza agregou mastante nesse inicio da nossa carreira como programadores. 
+
+Obrigado, a todos que estão vendo!
+
+Fiquem a vontade para dúvida ou sugestões de algo que poderiamos ter feito.
 
 ## Licença
 
